@@ -1,0 +1,253 @@
+*{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  box-sizing: border-box;
+  padding: 0;
+}
+img{
+  width: 20px;
+  height: 20px;
+}
+.website{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(white,lightblue);
+}
+.main{
+  padding: 0px;
+  display: flex;
+  flex-direction: column;
+}
+.primary{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 25px;
+}
+.left{
+  font-size: 4rem;
+  font-weight: 600;
+  text-align: center;
+  padding: 0;
+  margin: 0px;
+  color: rgb(62, 78, 148);
+  justify-self: center;
+  animation: slide_right 2s ease;
+}
+.right{
+  padding: 0px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  color: rgb(150, 150, 252);
+  animation: slide_left 2s ease;
+}
+.right h3{
+  font-size: 3rem;
+  font-weight: 300;
+}
+.secondary h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 500;
+  animation: slide_bottom 3s ease;
+}
+.secondary p{
+  text-align: center;
+  color: blue;
+  font-size: 1.3rem;
+  animation: fade_in 4s ease;
+}
+.chat{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 35px;
+}
+.chat button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  font-size: 22px;
+  background: linear-gradient(blue ,  white);
+  width: 180px;
+  height: 40px;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 0 10px blue;
+  cursor: pointer;
+  animation: slide_top 3s ease;
+
+  &:hover{
+    background: linear-gradient(white ,  blue);
+  }
+}
+.bot-container{
+  z-index: 5;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: none;
+}
+.bot{
+  width: 60%;
+  height: 80%;
+  background-color: white;
+  padding: 0;
+  border-radius: 10px;
+  box-shadow: 0 0 10 grey;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.bot h5{
+  margin: 0;
+  padding: 15px;
+  background-color: blue;
+  text-align: center;
+  font-size: 1.2rem;
+  color: white;
+  border-radius: 10px 10px 0 0;
+}
+.close{
+  float: right;
+  width: 30px;
+  height: 30px;
+  font-size: 20px;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+
+  &:hover{
+    background-color: red;
+  }
+}
+.send-message{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 15px;
+  background-color: blue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  border-radius: 0 0 10px 10px;
+  gap: 20px;
+}
+.send-message input{
+  width: 70%;
+  border-radius: 15px;
+  font-size: 16px;
+  outline: none;
+  border: none;
+  padding: 10px;
+}
+.send-message input:valid ~ button{
+  visibility: visible;
+}
+.send-message button{
+  width: 80px;
+  height: 40px;
+  font-size: 17px;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 15px;
+  border: none;
+  visibility: hidden;
+}
+.recieved-message , .sent-message{
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 50%;
+  gap: 10px;
+  padding: 5px 10px;
+}
+.recieved-message p , .sent-message p{
+  background-color: rgb(124, 124, 247);
+  padding: 10px;
+  border-radius: 10px;
+}
+.sent-message p {
+  background-color: grey;
+}
+.sent-message{
+  float: right;
+  flex-direction: row-reverse;
+}
+@keyframes slide_right {
+  0%{
+    transform: translateX(-100px);
+    opacity: 0;
+  }  
+  100%{
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+@keyframes slide_left {
+  0%{
+    transform: translateX(100px);
+    opacity: 0;
+  }  
+  100%{
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+@keyframes slide_top {
+  0%{
+    transform: translateY(-100px);
+    opacity: 0;
+  }  
+  100%{
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+@keyframes slide_bottom {
+  0%{
+    transform: translateY(100px);
+    opacity: 0;
+  }  
+  100%{
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+@keyframes fade_in {
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+@media (max-width : 550px) {
+  .primary{
+    flex-direction: column;
+  }
+}
+@media (max-width:400px) {
+  .chat{
+    flex-direction: column;
+  }
+}
+@media (max-width:850px) {
+  .bot{
+    width: 100%;
+    height: 100%;
+  }
+}

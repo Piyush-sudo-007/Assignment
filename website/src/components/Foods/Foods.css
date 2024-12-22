@@ -1,0 +1,140 @@
+.food-display{
+  margin-top: 30px;
+  padding: 20px 40px;
+}
+.food-display h2{
+  font-size: max(2vw,24px);
+  font-weight: 600;
+}
+.food-display-list{
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(200px,1fr));
+  margin-top: 30px;
+  gap: 30px;
+  row-gap: 50px;
+}
+.food-item{
+  width: 100%;
+  margin: auto;
+  border-radius: 15px;
+  box-shadow: 0 0 10px #00000015;
+  transition: 0.3s;
+  animation: fadeIn 1s;
+}
+.food-item-img{
+  width: 100%;
+  border-radius: 15px 15px 0 0;
+}
+.food-item-info{
+  padding: 20px;
+}
+.food-item-name-rating{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.food-item-name-rating p{
+  font-size: 20px;
+  font-weight: 500;
+}
+.food-item-name-rating img{
+  width: 70px;
+}
+.food-item-description{
+  color: #676767;
+  font-size: 12px;
+}
+.food-item-price{
+  color: tomato;
+  font-size: 22px;
+  font-weight: 500;
+  margin: 10px 0;
+}
+.food-item-img-container{
+  position: relative;
+}
+.food-item-img-container .add{
+  width: 35px;
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  cursor: pointer;
+  border-radius: 50%;
+  background-color: white;
+  padding: 5px;
+  box-shadow: 0 0 20px #646464;
+  transition: all 0.5s ease;
+
+  &:hover{
+    background-color: rgb(139, 241, 139);
+  }
+}
+.food-item-counter{
+  display: flex;
+  align-items: center;
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  gap: 5px;
+  padding: 6px;
+  border-radius: 50px;
+  background-color: white;
+}
+.food-item-counter img{
+  width: 30px;
+}
+.heart{
+  cursor: pointer;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-color: white;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #646464;
+  &:hover{
+    background-color: rgb(250, 117, 139);
+  }
+}
+.popup{
+  background-color: pink;
+  font-size: 15px;
+  border-radius: 5px;
+  width: 230px;
+  padding: 5px;
+  text-align: center;
+  position: absolute;
+  top: -20px;
+  right: -50px;
+  z-index: 1;
+}
+.danger{
+  background-color: red;
+  font-size: 15px;
+  border-radius: 5px;
+  width: 230px;
+  padding: 5px;
+  text-align: center;
+  position: absolute;
+  top: -20px;
+  right: -50px;
+  z-index: 1;
+}
+.added , .empty{
+  position: fixed;
+  top: 120px;
+  right: 30px;
+  z-index: 5;
+  font-size: 15px;
+  font-weight: 200;
+  color: white;
+  border-radius: 15px;
+  box-shadow: 0 0 20px grey;
+  padding: 10px;
+}
+.added{
+  background-color: green;
+}
+.empty{
+  background-color: red;
+}
